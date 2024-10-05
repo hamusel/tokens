@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #D0E4F5 url("images.jpg") repeat scroll 4px 0px;
+    height: 100vh;
+}
+
+h1 {
+    color: red;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+}
+
+div {
+    text-align: center;
+    font-size: 48px;
+    color: green;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    margin: 0;
+}
+
+.token {
+    width: 150px;
+    height: 150px;
+}
+
+#container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#Alex, #Botea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.face {
+    cursor: pointer;
+}
