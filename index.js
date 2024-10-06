@@ -1,5 +1,9 @@
-let tokensAlex = parseInt(localStorage.getItem('user1Tokens')) || 10;
-let tokensBotea = parseInt(localStorage.getItem('user2Tokens')) || 10;
+let tokensAlex = parseInt(localStorage.getItem('user1Tokens'));
+let tokensBotea = parseInt(localStorage.getItem('user2Tokens'));
+
+tokensAlex = isNaN(tokensAlex) ? 10 : tokensAlex;
+tokensBotea = isNaN(tokensBotea) ? 10 : tokensBotea;
+
 
 document.getElementById('alexTokensAmount').textContent = 'Jetoane: ' + tokensAlex;
 document.getElementById('boteaTokensAmount').textContent = 'Jetoane: ' + tokensBotea;
@@ -69,11 +73,13 @@ function removeToken(character) {
     if (character === "alex") {
         const tokens = alex.querySelectorAll('.token');
         if (tokens.length > 0) {
+            tokens[tokens.length - 1].classList.toggle('translated');
             alex.removeChild(tokens[tokens.length - 1]);
         }
     } else if (character === "botea") {
         const tokens = botea.querySelectorAll('.token');
         if (tokens.length > 0) {
+            tokens[tokens.length - 1].classList.toggle('translated');
             botea.removeChild(tokens[tokens.length - 1]);
         }
     }
@@ -95,3 +101,10 @@ function updateTokens(character) {
 
 }
 
+const images = document.querySelectorAll('img');
+
+images.forEach(image => {
+    image.addEventListener('dragstart', (event) => {
+        event.preventDefault();
+    });
+});
